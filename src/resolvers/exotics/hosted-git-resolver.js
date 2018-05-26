@@ -21,12 +21,6 @@ function parseHash(fragment: string): string {
   return hashPosition === -1 ? '' : fragment.substr(hashPosition + 1);
 }
 
-type PathParser = {
-  stripAt(): PathParser,
-  stripProtocol(): PathParser,
-  path(): string,
-};
-
 export function explodeHostedGitFragment(fragment: string, reporter: Reporter): ExplodedFragment {
   const hash = parseHash(fragment);
 
